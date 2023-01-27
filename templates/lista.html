@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Jogoteca</title>
-  </head>
-  <body>
+</head>
+
+<body>
     <div class="container">
         <div class="page-header">
             <h1>{{ titulo }}</h1>
@@ -14,16 +16,21 @@
             <thead class="thead-default">
                 <tr>
                     <th>Nome</th>
+                    <th>Categoria</th>
+                    <th>Console</th>
                 </tr>
             </thead>
             <tbody>
                 {% for jogo in jogos %}
                 <tr>
-                    <td>{{ jogo}}</td>
+                    <td>{{ jogo.nome}}</td>
+                    <td>{{ jogo.categoria}}</td>
+                    <td>{{ jogo.console}}</td>
                 </tr>
                 {% endfor %}
             </tbody>
         </table>
     </div>
-  </body>
+</body>
+
 </html>
