@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request, redirect, session
 
 app = Flask(__name__)
 
@@ -31,5 +31,17 @@ def criar():
     jogo = Jogo(nome, categoria, console)
     lista_de_jogos.append(jogo)
     return redirect('/')
+
+@app.route('/login')
+def login():
+    return render_template('login.html')
+
+@app.route('/autenticar', methods = ['POST',])                                                                                   
+def autenticar():
+    if 'alohomora' == request.form['senha']:
+        session['usuario_logado'] = request.form['usuario']
+        return redirect('/')  
+    else: 
+         return redirect('/login')            
 
 app.run(host = '0.0.0.0', port = 8080, debug = True)
