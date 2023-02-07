@@ -1,4 +1,4 @@
-from jogoteca import db
+from game_lib import db
 
 class Usuarios(db.Model):
     nickname = db.Column(db.String(8), primary_key=True)

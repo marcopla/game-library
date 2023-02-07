@@ -1,5 +1,5 @@
 from flask import render_template, request, redirect, session, flash, url_for
-from jogoteca import app, db
+from game_lib import app, db
 from models import Jogos, Usuarios
 
 @app.route('/')
@@ -29,6 +29,16 @@ def criar():
     db.session.commit()
 
     return redirect(url_for('index'))
+
+@app.route('/editar')
+def editar():
+    if 'usuario_logado' not in session or session['usuario_logado'] == None:
+        return redirect(url_for('login', proxima = url_for('editar')))   
+    return render_template('editar.html', title ='Editing Game')
+
+@app.route('/atualizar', methods = ['POST',])
+def atualizar():
+    pass
 
 @app.route('/login')
 def login():
