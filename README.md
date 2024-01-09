@@ -15,10 +15,10 @@ The app will run on port 8082
 Technologies:
 
 <div>
-Python 3.11.1
-Flask 2.2.2
-Werkzeug 2.2.2
-ORM: SQLAlchemy 2.0.1
-DB: MySQL
++ Python 3.11.1
++ Flask 2.2.2
++ Werkzeug 2.2.2
++ ORM: SQLAlchemy 2.0.1
++ DB: MySQL
 </div>
 
